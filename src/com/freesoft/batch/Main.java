@@ -16,7 +16,7 @@ public class Main {
 		String[] contextConfig = {"/resources/job-config.xml"};
 		ApplicationContext context = new ClassPathXmlApplicationContext(contextConfig);
 		JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-		Job job = (Job) context.getBean("helloWorldJob");
+		Job job = (Job) context.getBean("xml2mySqlJob");
 		JobExecution jobExecution = jobLauncher.run(job, new JobParameters());
 		System.out.println("Exit status: " + jobExecution.getStatus());
 	}
